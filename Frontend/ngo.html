@@ -1,0 +1,290 @@
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/ngo.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organisation Page</title>
+
+
+    <script>
+        function yellow(event) {
+            event.target.style.borderColor = "#f77f00";
+            event.target.placeholder = "";
+        }</script>
+
+
+</head>
+
+
+
+<body
+    style="background-image: url('images/ngo-main.jpg');background-repeat: no-repeat;background-position: center; background-attachment: fixed;  background-size:cover;">
+
+    <div class="container-fluid" id="banner" style="position: fixed; z-index: 100;">
+    </div>
+
+    <!--NAVBAR-->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-brand">Navbar</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav " style="padding-left:20px; margin-left:20px;">
+                <li class="nav-item " style="padding-left:20px; margin-left:20px;">
+                    <a class="nav-link active" href="#accdonations" id="viewdonationjs" role="tab"
+                        data-toggle="tab">Accept
+                        Donations<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item" style="padding-left:20px; margin-left:20px;">
+                    <a class="nav-link" href="#helpprg" id="ngo_help_programs" role="tab" data-toggle="tab">Help
+                        Programs</a>
+                </li>
+            </ul>
+
+            <!--PROFILE DROPDOWN-->
+            <form class="form-inline my-2 my-lg-0 ">
+                <div class="dropdown">
+                    <button class="btn btn-warning my-2 my-sm-0 dropdown-toggle Donorbutton" id="dropdownMenuButton" style="padding-right: 20px;
+                margin-right: 100px;background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+                            color:white;" type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">My Profile</button>
+
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" style="word-wrap: break-word" href="#viewprofile" id="profile"
+                            data-toggle="modal" data-target="#exampleModal">View Profile</a>
+                        <a class="dropdown-item" style="word-wrap: break-word" href="" id="logout">Logout</a>
+                    </div>
+
+
+                </div>
+            </form>
+
+        </div>
+    </nav>
+
+
+
+
+    <div class="container">
+
+        <!--MAIN CONTENT FOR TABS-->
+
+        <div class="tab-content">
+
+            <!--ACCEPT DONATIONS TAB CONTENT-->
+
+
+            <div role="tab-panel" class="tab-pane fade show active" id="accdonations">
+
+                <h3 class="page-heading col-12">
+                    Accept Donations from places around you for easy reachability and access
+                </h3>
+
+                <div id="viewdonationcards">
+                    
+                </div>
+            </div>
+
+            <!--HELP PROGRAMS TAB CONTENT-->
+
+            <div role="tab-panel" class="tab-pane fade" id="helpprg">
+
+                <h3 class="page2-heading col-12">
+                    "Helping one person might not change the whole world but it could change the world for that
+                    person"
+                </h3>
+                <h5 class="page2-heading col-12">
+                    Here's how we do our part.
+                </h5>
+
+
+                <div class="container-fluid">
+
+                    <div class="row ">
+                        <div id="viewhelpprogrammes">
+                        </div>
+                    </div>
+
+
+
+                    <!--ADD PROGRAM BUTTON-->
+
+                    <div class="row col-12">
+                        <h5 class="page2-heading col-12">Wish to be one of us? <br> Contribute by adding your
+                            programme
+                            and see the impact!
+                        </h5>
+                        <div class=" text-center">
+                            <input type="button" class="btn btn-warning addpr" style="font-weight: bolder;background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+                            color:white; width: auto;"
+                                value="Add Your Programme" data-toggle="modal" data-target="#addprModal">
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <!--PROFILE MODAL-->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: gainsboro;">
+                            <h5 class="modal-title" id="exampleModalLabel">My Profile</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <!-- Profile widget -->
+                            <div class="bg-white shadow rounded overflow-hidden">
+                                <div class="px-4 pt-0 pb-4 bg-dark">
+                                    <div class="media align-items-end profile-header">
+                                        <div class="profile mr-3"><img
+                                                src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg"
+                                                alt="..." width="130" class="rounded mb-2 img-thumbnail"></div>
+                                        <div class="media-body mb-5 text-white" style="margin-top: 20px;">
+                                            <h4 class="mt-0 mb-0" style="padding: 5px;" id="pr_nameoforg">Name of
+                                                Organisation</h4>
+                                            <p class="small mb-4"> <i class="fa fa-map-marker mr-2"
+                                                    id="pr_location"></i></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="py-4 px-4">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <h5 class="mb-0">Email</h5>
+                                        <h6 class="btn btn-link text-muted" id="pr_email">My Email</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <h5 class="mb-0">Phone no.</h5>
+                                        <h6 class="btn btn-link text-muted" id="pr_phone">Phone</h6>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <h5 class="mb-0">Areas catered</h5>
+                                        <h6 class="btn btn-link text-muted" id="pr_area">Areas</h6>
+                                    </div>
+                                </div>
+
+                                <div class="bg-light p-4 d-flex justify-content-between text-center">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <h5 class="font-weight-bold mb-0 d-block text-center"> My Website</h5><a
+                                                href="#" class="btn btn-link text-muted" id="pr_link">Open link</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div class="py-4 px-4">
+
+                                    <div class="py-4">
+                                        <h5 class="mb-3">Description</h5>
+                                        <div class="p-4 bg-light rounded shadow-sm"
+                                            style="background-color: gainsboro;">
+                                            <p class="font-italic mb-0" id="pr_desc">Lorem ipsum dolor sit amet,
+                                                consectetur
+                                                adipisicing
+                                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                Ut
+                                                enim ad minim veniam.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End profile widget -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--ADD PROGRAM MODAL-->
+            <div class="modal fade" id="addprModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h5 class="modal-title " id="exampleModalLabel">Add Help Programmes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card-body">
+                                <p class="card-text ">
+                                <div class="text-center">
+                                    <input id="progname" placeholder="Programme Name" type="text" style="width: 80%;"
+                                        onfocus="yellow(event)" required>
+                                </div>
+                                <div class="text-center">
+                                    <input id="progdesc" placeholder="Description" type="text" style="width: 80%;"
+                                        onfocus="yellow(event)" required>
+                                </div>
+                                <div class="text-center">
+                                    <input id="progaid" placeholder="Aid Provided" type="text" style="width: 80%;"
+                                        onfocus="yellow(event)" required>
+                                </div>
+                                <div class="text-center">
+                                    <input id="progcity" placeholder="City" type="text" style="width: 80%;"
+                                        onfocus="yellow(event)" required>
+                                </div>
+                                <div class="text-center">
+                                    <input id="progaddr" placeholder="Address" type="text" style="width: 80%;"
+                                        onfocus="yellow(event)" required>
+                                </div>
+                                <div style=" position:relative;" class="text-center">
+                                    <input class="login-button" type="submit" value="Submit" id="prsub"
+                                        data-dismiss="modal">
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="scripts/ngo.js"></script>
+
+</body>
+
+</html>

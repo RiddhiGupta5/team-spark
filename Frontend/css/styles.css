@@ -1,0 +1,224 @@
+@keyframes opacityOnAndOff {
+
+    0%{
+        top:-10%;
+    }
+
+    /* 25%{
+        top: 0%;
+        background:red;
+    } */
+
+    50% {
+        top: 0%;
+    }
+
+    75%{
+        top: 0%;
+    }
+
+    100%{
+        top:-10%;       
+    }
+}
+
+#banner {
+    display: none;
+    background: red;
+    animation-name: opacityOnAndOff;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count:1;
+    animation-play-state:running;
+    animation-fill-mode:forwards;
+}
+
+.error {
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+    color: white;
+    top: 20%;
+    width:100%;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Arima Madurai', cursive;
+}
+
+body {
+    outline : none;
+    -webkit-outline : none;
+    -moz-outline : none;
+    -ms-outline : none;
+    -o-outline : none;
+    font-family: 'Rancho', cursive;
+    
+}
+
+
+.Donorbutton{
+    background-color: #e49b0f;
+    border-color: #f77f00;
+    border-width: 3px;
+    color:white;
+ }
+
+
+.dropdown-item{
+    font-size:15px;
+}
+
+.home-login-btn{
+    padding-right: 20px;
+    margin-right: 100px;
+}
+
+
+
+/*HOME CSS STARTS */
+.carousel-item{
+    width:300px;
+    height: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+    .carousel-item{
+        height: 200px;
+    }
+  }
+  
+
+.button{
+    text-align: center;
+    padding: 50px;
+    
+}
+
+.index-button{
+    width: 60%;
+    border-radius: 10px;
+
+}
+
+
+.title{
+    color: black;
+    font-size: 60px;
+    text-align: center;
+    padding: 30px;
+    font-weight: bolder;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.description{
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bolder;
+    font-family: 'Arima Madurai', cursive;
+}
+
+/*HOME CSS ENDS */
+
+
+#popup{
+    border-radius:10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    padding:40px;
+    position:fixed; 
+    top:50%; 
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index : 2000; 
+    height : auto;
+    background-color:#f0f0ef;
+    display:none;
+}
+.admin{
+    text-align:center;
+    margin-top:50px;
+}
+
+
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+.bg-white {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+}
+
+input{
+    width:50%;
+    padding: 5px 20px;
+    margin-top:50px;
+    color:black;
+    display: inline-block;
+    font-size:20px;
+    height:55px;
+    text-decoration:none;
+    border-radius:40px;
+    border:2px solid #e49b0f;
+    box-sizing: border-box;
+    cursor:pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    input {
+        width:70%;
+    }
+}
+
+
+input:hover{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+}
+.login-button{
+    width:auto;
+    color:white;
+    font-weight:bolder;
+    padding:5px 50px;
+    border-radius:40px;
+    border:2px solid #f77f00;
+    background-color: #e49b0f;
+    font-size:15px;
+    cursor: pointer
+}
+
+.login-signup-title{
+    color: gainsboro
+}
+
+@media only screen and (max-width: 768px) {
+    .login-signup-title{
+        color: gainsboro;
+        font-size: 30px;
+    }
+
+    .index-button{
+        width: 100%;
+        border-radius: 10px;
+    
+    }
+}
+
+a{
+    color:gainsboro;
+    font-size:20px;
+}
+
+a:hover{
+    color:gainsboro;
+}
+
+
+.button-container {
+    padding-top: 40px;
+}

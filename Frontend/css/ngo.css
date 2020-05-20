@@ -1,0 +1,260 @@
+@keyframes opacityOnAndOff {
+
+    0%{
+        top:-10%;
+    }
+
+    /* 25%{
+        top: 0%;
+        background:red;
+    } */
+
+    50% {
+        top: 0%;
+    }
+
+    75%{
+        top: 0%;
+    }
+
+    100%{
+        top:-10%;       
+    }
+}
+
+
+body {
+    outline : none;
+    -webkit-outline : none;
+    -moz-outline : none;
+    -ms-outline : none;
+    -o-outline : none;
+    
+}
+
+#banner {
+    display: none;
+    background: red;
+    animation-name: opacityOnAndOff;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count:1;
+    animation-play-state:running;
+    animation-fill-mode:forwards;
+}
+
+.error {
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+    color: white;
+    top: 20%;
+    width:100%;
+}
+
+
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.page-heading{
+    text-align: center;
+    padding:20px;
+    color:whitesmoke;
+    font-weight: bolder;
+    margin-top:20px;
+}
+
+
+.page2-heading{
+    text-align: center;
+    padding:10px;
+    color:whitesmoke;
+    font-weight: bolder;
+    margin-top:20px;
+}
+
+.card-text{
+    padding:5px;
+    font-size:20px;
+}
+
+
+.card{
+    text-align: center;
+    width: 60%;
+    height: 40%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left:200px
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+.card{
+    text-align: center;
+    width: 80%;
+    height: 50%;
+    margin-top:10px;
+    margin-left:30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+}
+
+
+.tab-content{
+    padding-bottom: 100px;
+    
+}
+
+
+
+ .form-control {
+    box-shadow: none !important;
+    resize: none !important;
+}
+
+
+ form{
+     outline: none;
+ }
+
+ .dropdown-item :active{
+     background-color: gainsboro;
+ }
+
+ 
+
+@media only screen and (max-width: 600px){
+    .addpr{
+        margin-left: 50px;
+    
+    }
+ }
+
+@media only screen and (min-width: 600px){
+    .addpr{
+        margin-left: 80px;
+    
+    }
+ }
+
+
+ @media only screen and (min-width: 768px){
+    .addpr{
+        margin-left: 250px;
+    
+    }
+ }
+
+ @media only screen and (min-width: 992px){
+    .addpr{
+        margin-left: 350px;
+    
+    }
+ }
+
+ @media only screen and (min-width: 1200px){
+    .addpr{
+        margin-left: 450px;
+    
+    }
+ }
+
+ @media only screen and (min-width: 600px){
+    .prcard{
+        width:100%;
+        
+    }
+ }
+
+ @media only screen and (min-width: 768px){
+    .prcard{
+        width:100%;
+    
+    }
+ }
+
+
+ @media only screen and (min-width: 992px){
+    .prcard{
+        width:150%;
+        
+    }
+ }
+
+ @media only screen and (min-width: 993px){
+    .prcard{
+        width:200%;
+        text-align: center;
+    }
+
+    #viewhelpprograms{
+        width: 130%
+    }
+
+    #viewdonationcards{
+        width: 80%
+    }
+ }
+
+
+ @media only screen and (max-width: 768px){
+    ::placeholder {
+        font-size: 11px;
+    }
+ }
+
+ .Donorbutton{
+    background-color: #e49b0f;
+    border-color: #f77f00;
+    border-width: 3px;
+    color:white;
+ }
+
+
+ @media only screen and (max-width: 768px){
+    .Donorbutton {
+        font-size: 12px;
+    }
+
+    #viewdonationcards{
+        width: 90%
+    }
+ }
+
+ @media only screen and (max-width: 992px){
+    .Donorbutton {
+        font-size: 12px;
+        width:100%;
+        
+        
+    }
+
+    #viewhelpprograms{
+        width: 80%
+    }
+
+   
+ }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 

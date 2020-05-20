@@ -1,0 +1,262 @@
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/ngo.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Donor Page</title>
+
+  <script>
+    function yellow(event) {
+      event.target.style.borderColor = "#f77f00";
+      event.target.placeholder = "";
+    }</script>
+
+</head>
+
+<body
+  style="background-image: url('images/usersmain.jpg');background-repeat: no-repeat;background-position: center;  background-size:cover; width: 100%; background-attachment: fixed;  ">
+
+  <div class="container-fluid" id="banner" style="position: fixed; z-index: 100;">
+  </div>
+  <!--NAVBAR-->
+
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <div class="navbar-brand">Navbar</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto nav " style="padding-left:20px; margin-left:20px;">
+        <li class="nav-item " style="padding-left:20px; margin-left:20px;">
+          <a class="nav-link active" href="#my_donations" role="tab" data-toggle="tab">Make Donations<span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" style="padding-left:20px; margin-left:20px;">
+          <a class="nav-link" href="#help_programs" id="donor_help_programs" role="tab" data-toggle="tab">Help
+            Programs</a>
+        </li>
+        <li class="nav-item" style="padding-left:20px; margin-left:20px;">
+          <a class="nav-link" href="#messages" role="tab" id="viewmessage" data-toggle="tab">View Messages</a>
+        </li>
+      </ul>
+
+      <!--MY PROFILE DROPDOWN-->
+      <form class="form-inline my-2 my-lg-0 ">
+        <div class="dropdown">
+          <button class="btn btn-warning my-2 my-sm-0 dropdown-toggle Donorbutton" id="dropdownMenuButton" style="padding-right: 20px;
+                margin-right: 100px;background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+                            color:white;" type="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">My Profile</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" style="word-wrap: break-word" href="#viewprofile" id="profile" data-toggle="modal"
+              data-target="#exampleModal">View Profile</a>
+            <a class="dropdown-item" style="word-wrap: break-word" href="" id="logout">Logout</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container" id="background">
+
+
+
+    <div class=" col-12 page2-heading">
+      <h3 class>WELCOME</h3>
+      <h2 id="welcome">USER_NAME_OF_DONOR</h2>
+    </div>
+
+
+    <!--MAIN CONTENT FOR TABS-->
+    <div class="tab-content">
+      <div role="tab-panel" class="tab-pane fade show active" id="my_donations">
+
+        <h3 class="page2-heading col-12">
+          "Be the change you wish to see in the world"
+        </h3>
+        <h5 class="page2-heading col-12">
+          Donate and see the difference.
+        </h5>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 button">
+              <input type="button" class="btn btn-warning index-button Donorbutton" style="font-weight: bolder;background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+              color:white;"
+                value="Make Donation Requests" data-toggle="collapse" data-target="#makedon" aria-expanded="false"
+                aria-controls="collapseExample">
+            </div>
+            <div class="col-12 col-md-6 button">
+              <input type="button" class="btn btn-warning index-button Donorbutton" style="font-weight: bolder;background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+              color:white;" id="viewdonationjs"
+                value="View my Donation Request" data-toggle="collapse" data-target="#viewdon" aria-expanded="false"
+                aria-controls="collapseExample">
+            </div>
+          </div>
+
+          <!--MAKE DONATION FORM-->
+          <div class="collapse" id="makedon">
+            <div class="card" style=" height: 40rem;">
+              <div class="card-header" style="font-weight: bolder;">
+                Fill the form below to send a donate request
+              </div>
+              <div class="card-body">
+                <p class="card-text">
+                <div>
+                  <input id="itemname" placeholder="Item Name" type="text" onfocus="yellow(event)" required>
+                </div>
+                <div>
+                  <input id="quantity" placeholder="Quantity" type="number" onfocus="yellow(event)" required>
+                </div>
+                <div>
+                  <input id="desc" placeholder="Description" type="text" onfocus="yellow(event)" required>
+                </div>
+
+                <div style=" position:relative;">
+                  <input class="login-button" type="submit" value="Submit" id="sub">
+                </div>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--VIEW DONATION CARDS-->
+          <div class="collapse" id="viewdon">
+            <div id="viewdonationcards"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- second tab panel content for help programs-->
+
+
+      <div role="tab-panel" class="tab-pane fade" id="help_programs">
+
+        <h3 class="page2-heading col-12">
+          "Helping one person might not change the whole world but it could change the world for that
+          person"
+        </h3>
+        <h5 class="page2-heading col-12">
+          Here's how we do our part.
+        </h5>
+
+
+        <div class="container">
+          <div class="row col-12">
+            <div id="viewhelpprogrammes">
+            </div>
+            
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <!-- third tab panel content for messages-->
+
+
+      <div role="tab-panel" class="tab-pane fade" id="messages">
+        <div class="container">
+
+          <h3 class="page2-heading col-12">
+            Messages Received from NGOs
+          </h3>
+          <main role="main" class="container" style="padding: 20px;">
+
+            <div class="my-3 p-3 bg-white rounded box-shadow" style="padding: 20px;">
+              <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
+
+              <div id="messageinbox">
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <!--End of tab content-->
+
+
+    <!--VIEW PROFILE MODAL-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: gainsboro;">
+            <h5 class="modal-title" id="exampleModalLabel">My Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- Profile widget -->
+            <div class="bg-white shadow rounded overflow-hidden">
+              <div class="px-4 pt-0 pb-4 bg-dark">
+                <div class="media align-items-end profile-header">
+                  <div class="profile mr-3" style="margin-top: 20px;"><img
+                      src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..."
+                      width="130" class="rounded mb-2 img-thumbnail"></div>
+                  <div class="media-body mb-5 text-white" style="margin-top: 20px;">
+                    <h4 class="mt-0 mb-0" style="padding: 5px;" id="pr_nameofuser">Name of Donor</h4>
+                    <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i></p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="py-4 px-4" style="margin-top: 20px;">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h5 class="mb-0">Email</h5>
+                  <h6 class="btn btn-link text-muted" id="pr_email">My Email</h6>
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h5 class="mb-0">Phone no.</h5>
+                  <h6 class="btn btn-link text-muted" id="pr_phone">Phone</h6>
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h5 class="mb-0">Address</h5>
+                  <h6 class="btn btn-link text-muted" id="pr_location">My Address</h6>
+                </div>
+
+              </div>
+              <div class="bg-light p-4 d-flex justify-content-between text-center">
+
+              </div>
+
+            </div><!-- End profile widget -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="scripts/donor.js"></script>
+
+</body>
+
+</html>

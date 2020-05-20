@@ -1,0 +1,171 @@
+<html lang="en">   <!--done-->
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Organisation LogIn</title>
+
+    <script>
+        function yellow(event) {
+            event.target.style.borderColor = "#f77f00";
+            event.target.placeholder = "";
+        }</script>
+
+</head>
+
+<body style="background-image: url('images/ngo-login.jpg');background-repeat: no-repeat;background-position: center; background-attachment: fixed;  background-size:cover; background-color:lightsteelblue; ">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Navbar</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" >
+        <div class="container-fluid" id="banner" style="position: fixed; z-index: 100;">
+        </div>
+        <div class="row" style="margin-top : 10px; margin-bottom:50px;">
+
+            <div class="col-12 col-lg-6" style="padding: 40px">
+                <div style="background: url() center center;background-size: cover; height:100%;"></div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="admin checklist">
+                    <h1 class="login-signup-title">Organisation LogIn</h1>
+                    <div>
+                        <div id="error"></div>
+                    </div>
+                    <div>
+                        <input id="logname" placeholder="Name" type="text" name="name" onfocus="yellow(event)" required>
+                    </div>
+                    <div>
+                        <input id="logpass" placeholder="Password" type="password" onfocus="yellow(event)" required>
+                    </div>
+                    <div style=" position:relative;">
+                        <input class="login-button" type="submit" value="LogIn" id="sub">
+                    </div>
+
+                    <div style="padding-top:30px">
+                        <a href="ngo-signup.html"><b><u> New here? Register as an Organisation and join us!</u></b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+        <script>
+
+
+            window.onload = function () {
+                document.getElementById("sub").addEventListener("click", function (e) {
+                    var name = document.getElementById("logname").value;
+                    var password = document.getElementById("logpass").value;
+    
+    
+                    let status = [];
+    
+                    let re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    
+    
+                    if (name.length <= 1) {
+                    document.getElementById("logname").style.borderColor = "red";
+                    document.getElementById("logname").value = "";
+                    document.getElementById("logname").placeholder = "Please enter valid name";
+                    status.push("false")
+                    document.getElementById("logname").classList.add("red");
+                } else {
+                    status.push("true")
+                }
+                    var len = password.length;
+                    if (len >= 6) {
+                        status.push("true")
+                    } else {
+                        status.push("true")
+                        document.getElementById("logpass").style.borderColor = "red";
+                        document.getElementById("logpass").value = "";
+                        document.getElementById("logpass").placeholder = "Please enter valid password";
+                        status.push("false")
+                        document.getElementById("logpass").classList.add("red");
+                    }
+    
+    
+                    if (status.includes("false")) {
+                        console.log("There was some error while validating")
+                        return false
+                    }
+    
+                    else {
+    
+                        console.log("Validated")
+    
+                        document.getElementById("sub").value = "Loading..."
+    
+    
+                        fetch("https://crack-corona-hack-backend.herokuapp.com/app/org/login/", {
+                            method: 'POST',
+                            headers: new Headers({ 'content-type': 'application/json' }),
+                            body: JSON.stringify({
+                                org_name: name,
+                                password: password,
+                            }),
+                        })
+                            .then(function (response) {
+                                return response.json();
+                            })
+                            .then(res => {
+                                if (res.Organization.token) {
+                                    localStorage.setItem("token", res.Organization.token)     //done like hell
+                                    window.location.href = "ngo.html";
+                                    document.getElementById("sub").value = "LogIn"
+                                } else {
+                                    document.getElementById("banner").style.backgroundColor = "red";
+                                    document.getElementById("banner").style.display = "block";
+                                    document.getElementById("banner").innerHTML = ""
+                                    document.getElementById("banner").classList.add("error");
+                                    document.getElementById("sub").value = "LogIn"
+                                }
+                            })
+                            .catch(err => {
+                                document.getElementById("banner").style.backgroundColor = "red";
+                                document.getElementById("banner").style.display = "block";
+                                document.getElementById("banner").innerHTML = "Please enter correct username and password."
+                                document.getElementById("banner").classList.add("error");
+                                document.getElementById("sub").value = "LogIn"
+                                console.log(err)
+                            })
+    
+                    }
+    
+                });
+            }
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<html lang="en">   <!--done-->
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Donor SignUp</title>
+
+    <script>
+        function yellow(event) {
+            event.target.style.borderColor = "#f77f00";
+            event.target.placeholder = "";
+        }</script>
+
+
+</head>
+
+<body
+    style="background-image: url('images/donor-signup.jpg');background-repeat: no-repeat;background-position: center; background-attachment: fixed;  background-size:cover; background-color:lightsteelblue; ">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Navbar</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="container-fluid" id="banner" style="position: fixed; z-index: 100;">
+        </div>
+        <div class="row" style="margin-top : 10px; margin-bottom:50px;">
+
+
+            <div class="col-12 col-lg-6">
+                <div class="admin">
+                    <h1 class="login-signup-title"> Donor Sign Up</h1>
+                    <div>
+                        <div id="error"></div>
+                    </div>
+                    <div>
+                        <input id="name1" placeholder="Name" type="text" onfocus="yellow(event)"  required>
+                    </div>
+                    <div>
+                        <input id="email1" placeholder="Email" type="email" onfocus="yellow(event)"  name="emailaddress" required>
+                    </div>
+                    <div>
+                        <input id="phone" placeholder="Phone" type="tel" onfocus="yellow(event)"  required>
+                    </div>
+                    <div>
+                        <input id="address" placeholder="Address" type="text" onfocus="yellow(event)"  required>
+                    </div>
+                    <div>
+                        <input id="pass1" placeholder="Password" type="password" onfocus="yellow(event)"  required>
+                    </div>
+                    <div style=" position:relative;">
+                        <input class="login-button" type="submit" value="Signup" id="sub">
+                    </div>
+
+                    <div style="padding-top:30px">
+                        <a href="donor-login.html"><b><u>Already have an
+                                    account? Login!</u></b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+        <script>
+
+            window.onload = function () {
+                document.getElementById("sub").addEventListener("click", function (e) {
+    
+                    var name = document.getElementById("name1").value;
+                    var email = document.getElementById("email1").value;
+                    var password = document.getElementById("pass1").value;
+                    var phone = document.getElementById("phone").value;
+                    var address = document.getElementById("address").value; 
+                    
+                    let status = [];
+                    let re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    
+                    if (name.length <= 1) {
+                        document.getElementById("name1").style.borderColor = "red";
+                        document.getElementById("name1").value = "";
+                        document.getElementById("name1").placeholder = "Please enter valid name";
+                        status.push("false")
+                        document.getElementById("name1").classList.add("red");
+                    } else {
+                        status.push("true")
+                    }
+                    if (phone.length <= 1) {
+                        document.getElementById("phone").style.borderColor = "red";
+                        document.getElementById("phone").value = "";
+                        document.getElementById("phone").placeholder = "Please enter valid number";
+                        status.push("false")
+                        document.getElementById("phone").classList.add("red");
+                    } else {
+                        status.push("true")
+                    }
+                    if (address.length <= 1) {
+                        document.getElementById("address").style.borderColor = "red";
+                        document.getElementById("address").value = "";
+                        document.getElementById("address").placeholder = "Please enter valid address";
+                        status.push("false")
+                        document.getElementById("address").classList.add("red");
+                    } else {
+                        status.push("true")
+                    }
+                    if (re.test(email.trim())) {
+                        status.push("true")
+                    } else {
+                        document.getElementById("email1").style.borderColor = "red";
+                        document.getElementById("email1").value = "";
+                        document.getElementById("email1").placeholder = "Please enter valid email";
+                        status.push("false")
+                        document.getElementById("email1").classList.add("red");
+                    }
+                    var len = password.length;
+                    if (len <= 6) {
+                        status.push("false")
+                        document.getElementById("pass1").style.borderColor = "red";
+                        document.getElementById("pass1").value = "";
+                        document.getElementById("pass1").placeholder = "Please enter valid password";
+                        
+                    } else {
+                        status.push("true")
+                    }
+                    if (status.includes("false")) {
+                        console.log("There was some error while validating")
+                        return false
+                    }
+                    else {
+                        console.log("Validated")
+                        document.getElementById("sub").value = "Loading..."
+                        fetch("https://crack-corona-hack-backend.herokuapp.com/app/user/signup/", {
+                            method: 'POST',
+                            headers: new Headers({'content-type': 'application/json'}),
+                            body: JSON.stringify({
+                                email: email,
+                                username: name,
+                                phone_no: phone,
+                                address: address,
+                                password: password
+                            }),
+                        })
+                        .then(res => {
+                            return res.json()
+                        })
+                        .then(res => {
+                            console.log(res)
+                            if (res.User.token) {
+                                localStorage.setItem("token", res.User.token);         //done like hell
+                                localStorage.setItem("token", res.User.token);
+                                document.getElementById("banner").style.backgroundColor = "green";
+                                document.getElementById("banner").style.display = "block";
+                                document.getElementById("banner").innerHTML = "User was successfully registered!! Redirecting ...";
+                                document.getElementById("banner").classList.add("error");
+                                document.getElementById("name1").value = "";
+                                document.getElementById("sub").value = "Signup";
+                                setTimeout(() => {
+                                    window.location.href = "donor-login.html";
+                                }, 2500)
+                            } else if (res.err = "User already exist"){
+                                document.getElementById("banner").style.backgroundColor = "red";
+                                document.getElementById("banner").style.display = "block";
+                                document.getElementById("banner").innerHTML = "User already exist!! Try signing in."
+                                document.getElementById("banner").classList.add("error");
+                                document.getElementById("sub").value = "Signup"
+                            } else {
+                                document.getElementById("banner").style.backgroundColor = "red";
+                                document.getElementById("banner").style.display = "block";
+                                document.getElementById("banner").innerHTML = "Unexpected error occurred"
+                                document.getElementById("banner").classList.add("error");
+                                document.getElementById("sub").value = "Signup"
+                            }
+                        })
+                        .catch(err => {
+                            document.getElementById("banner").style.backgroundColor = "red";
+                            document.getElementById("banner").style.display = "block";
+                            document.getElementById("banner").innerHTML = "It's on us! There was some error"
+                            document.getElementById("banner").classList.add("error");
+                            document.getElementById("sub").value = "Signup"
+                        })
+                    }
+                })
+            };</script>
+
+
+</body>
+
+</html>
