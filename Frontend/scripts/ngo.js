@@ -131,7 +131,8 @@ window.onload = function () {
                               <textarea class="form-control" id="Textarea1" rows="5" cols="50"
                                   placeholder="Drop a message"></textarea>
                               <button data-id='${ele.id}' onclick="sendMessage(event)" class="btn btn-outline-warning" type="submit"
-                                  id="submitmessage">Submit</button>
+                                  id="submitmessage" style="background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+                                  color:white;">Submit</button>
                           </div>
                       </form>
                   </div>
@@ -383,7 +384,7 @@ window.onload = function () {
             content = content + `
             <div class="card " id="viewhelpprograms">
             <div class="card-body">
-                <h5 class="card-title" style="color:#f77f00; font-weight:bolder">Programme Name: ${prgname}</h5>
+                <h5 class="card-title" style="color:#f77f00; font-weight:bolder"> ${prgname}</h5>
                 <p class="card-text">
                 <div style="font-size: 18px; font-weight: bolder; padding-bottom: 10px;" id="quanofitem">Aid Provided: ${aidprovided}</div>
                 <div style="font-size: 18px; font-weight: bolder; padding-bottom: 10px;" id="quanofitem">Description: ${description}</div>
@@ -392,7 +393,7 @@ window.onload = function () {
                 </p>
             </div>
             <div class="card-body" style="background-color:grey; color:white" >
-                <a href="#" class="card-link">Org name: ${orgname}</a>
+                <a href="#" class="card-link">Organization: ${orgname}</a>
             </div>
         </div>
         `

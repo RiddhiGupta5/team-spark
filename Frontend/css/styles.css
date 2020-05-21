@@ -201,6 +201,9 @@ input:hover{
         color: gainsboro;
         font-size: 30px;
     }
+    img{
+        width: 80%;
+    }
 
     .index-button{
         width: 100%;
