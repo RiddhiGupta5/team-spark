@@ -6,11 +6,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Donor LogIn</title>
+
+    <style>
+        
+    </style>
 
     <script>
         function yellow(event) {
@@ -21,8 +26,7 @@
 
 </head>
 
-<body
-    style="background-image: url('images/donor-login.jpg');background-repeat: no-repeat;background-position: center;  background-size:cover; background-color:lightsteelblue; ">
+<body  id="donorlogin" style="background-image: url('images/donor-login-new.jpg');background-repeat: no-repeat;background-position: center;  background-size:cover; background-color:gray; width: 100%;">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html"><img src="images/logonew.png"></a>
@@ -136,15 +140,15 @@
                     fetch("https://crack-corona-hack-backend.herokuapp.com/app/user/login/", {
                         method: 'POST',
                         headers: new Headers({ 'content-type': 'application/json' }),
-                        body: JSON.stringify ({
+                        body: JSON.stringify({
                             email: email,
                             password: password,
                         }),
                     })
-                    
-                    .then(function (response) {
-                                return response.json();
-                            })
+
+                        .then(function (response) {
+                            return response.json();
+                        })
                         .then(res => {
                             console.log(res)
                             if (res.User.token) {
