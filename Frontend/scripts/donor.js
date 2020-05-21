@@ -274,7 +274,7 @@ window.onload = function () {
             let description = ele.description;
             serial = serial + 1;
             content = content + `
-            <div class="card" id="viewhelpprograms">
+            <div class="card" style="padding:5px" id="viewhelpprograms">
             <div class="card-body">
                 <h5 class="card-title" style="color:#f77f00; font-weight:bolder">Programme name: ${prgname}</h5>
                 <p class="card-text">
