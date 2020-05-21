@@ -9,18 +9,18 @@
     let id = event.target.getAttribute('data-id');
     console.log(id)
   
-    var message = document.getElementById("Textarea1").value;
+    var message = document.getElementById(id).value;
 
 
     let status = [];
 
 
     if (message.length <= 1) {
-      document.getElementById("Textarea1").style.borderColor = "red";
-      document.getElementById("Textarea1").value = "";
-      document.getElementById("Textarea1").placeholder = "Please enter valid message";
+      document.getElementById(id).style.borderColor = "red";
+      document.getElementById(id).value = "";
+      document.getElementById(id).placeholder = "Please enter valid message";
       status.push("false")
-      document.getElementById("Textarea1").classList.add("red");
+      document.getElementById(id).classList.add("red");
     } else {
       status.push("true")
     }
@@ -30,7 +30,7 @@
     }
     else {
       console.log("Validated")
-      document.getElementById("submitmessage").value = "Loading..."
+      event.target.value = "Loading..."
       let token = (localStorage.getItem("token"));
       fetch("https://crack-corona-hack-backend.herokuapp.com/app/accept_donation/", {
         method: 'POST',
@@ -128,10 +128,10 @@ window.onload = function () {
                       aria-labelledby="dropdownMenuButton">
                       <form>
                           <div class="form-group">
-                              <textarea class="form-control" id="Textarea1" rows="5" cols="50"
+                              <textarea class="form-control" id='${ele.id}' rows="5" cols="50"
                                   placeholder="Drop a message"></textarea>
                               <button data-id='${ele.id}' onclick="sendMessage(event)" class="btn btn-outline-warning" type="submit"
-                                  id="submitmessage" style="background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
+                                  style="background-color: #e49b0f;border-color: #f77f00;border-width: 3px;
                                   color:white;">Submit</button>
                           </div>
                       </form>
