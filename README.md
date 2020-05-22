@@ -34,13 +34,11 @@ The Project is hosted using Netlify and is live at https://jeevika.netlify.app
 
 Server is deployed using Heroku at 
 
-## Screenshot of the Home Page of the website
-
-
-
-
 ## Working Video of the Project
 
 Watch the video to understand the complete working of the portal at "youtube link".
 
+## Screenshot of the Home Page of the website
+
+![homepage ss](https://user-images.githubusercontent.com/48960420/82667668-ef599480-9c55-11ea-8893-49971a7064df.png)
 
