@@ -1,7 +1,7 @@
 
 # Project Jeevika
 
-Team Spark brings to you, Jeevika, a website made to act as a platform of communication between the NGOs and the donors by bridging the gap between the two.
+Team Spark brings to you, Jeevika, a website made to act as a platform of communication between the NGOs and the donors by bridging the gap between the two. Jeevika also helps the needy to get updated  with the latest help drives around them by SMS. People can register their Phone Numbers with us very easily by just sending an SMS.
 <br />
 
 ## Our Idea
@@ -14,21 +14,49 @@ Our aim at Jeevika is to support the prolonged struggle of the needy by providin
 1. Any individual willing to donate items for the poor, can put up a request with certain details. If the donation request gets accepted by a nearby NGO, you shall be updated with a message specifying how to get in touch!
 2. NGOs can accept the donation requests if the donors live nearby and may send a message through our platform, thus connect.
 3. NGOs can add their specific help programmes which are currently active. Hence users on the platform can see and participate in the same.
-4. People in need can register phone numbers by just a call and will always be kept updated about the latest ongoing help programmes through SMS.
+4. People in need can register phone numbers by just sending SMS and will always be kept updated about the latest ongoing help programmes through SMS.
 
 
 ## Project Creation
 
-### At Frontend:
+### Frontend:
 
 1. Technical Stack Used: HTML, CSS, JAVASCRIPT
 2. Framework Used: Bootstrap
 3. Editor used: VS Code
-4. The Project can be run by opening the the index.html file leading to the home page
+4. Instructions to run:
+    * The Project can be run by opening the the index.html file leading to the home page
 
-### At Backend: 
+### Backend: 
 
+1. Technical Stack Used: Django, Heroku, Postgresql
+2. Editor Used: VS Code
+3. Instrictions to run:
+    * Pre-requisites:
+        -  Python3
 
+    * Directions to install
+        - Setting up a virtual env 
+        ```bash
+        virtualenv env
+        env\\Scripts\\activate
+        ```
+        - Installing Packages
+        ```bash
+        pip install -r requirements.txt
+        ```
+        - Making mgrations
+        ```bash
+        python manage.py migrate
+        ````
+
+    * Run the server
+
+        ```bash
+        python manage.py runserver 3000
+        ```
+
+<br>
 <br />
 
 ### Deployment
@@ -48,7 +76,7 @@ Server is deployed using Heroku at
 
 ## Working Video of the Project
 
-Watch the video to understand the complete working of the portal at "youtube link".
+Watch the video to understand the complete working of the portal at https://youtu.be/HG1ABykqSO0.
 <br />
 <br />
 
