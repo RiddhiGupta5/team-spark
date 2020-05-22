@@ -29,7 +29,7 @@ Our aim at Jeevika is to support the prolonged struggle of the needy by providin
 
 ### Backend: 
 
-1. Technical Stack Used: Django, Heroku, Postgresql, Node-Red
+1. Technical Stack Used: Django, Heroku, Postgresql, Node-Red, Twilio
 2. Editor Used: VS Code
 3. Instrictions to run:
     * Pre-requisites:
