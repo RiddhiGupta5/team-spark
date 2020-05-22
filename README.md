@@ -39,7 +39,7 @@ Our aim at Jeevika is to support the prolonged struggle of the needy by providin
         - Setting up a virtual env 
         ```bash
         virtualenv env
-        env\\Scripts\\activate
+        env\Scripts\activate
         ```
         - Installing Packages
         ```bash
@@ -84,3 +84,6 @@ Watch the video to understand the complete working of the portal at [Jeevika_vid
 
 ![homepage ss](https://user-images.githubusercontent.com/48960420/82667668-ef599480-9c55-11ea-8893-49971a7064df.png)
 
+<p align="center">
+	Made with :heart: by Team Spark:star:
+</p>
