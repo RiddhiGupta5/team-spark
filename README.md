@@ -35,7 +35,7 @@ Our aim at Jeevika is to support the prolonged struggle of the needy by providin
 
 The Project is hosted using Netlify and is live at https://jeevika.netlify.app
 
-Server is deployed using Heroku at 
+Server is deployed using Heroku
 <br />
 
 ### Team Members
@@ -48,7 +48,7 @@ Server is deployed using Heroku at
 
 ## Working Video of the Project
 
-Watch the video to understand the complete working of the portal at "youtube link".
+Watch the video to understand the complete working of the portal at [Jeevika_video](https://youtu.be/HG1ABykqSO0)
 <br />
 <br />
 
