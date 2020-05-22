@@ -179,8 +179,33 @@ input{
         width:70%;
         font-size: 13px;
     }
+
+    iframe {
+        width:300;
+        height:300
+    }
+
+    #video{
+        padding-bottom:10px;
+        padding-top:10px;
+    }
     
 }
+
+@media only screen and (min-height: 992px) {
+    iframe {
+        width:500;
+        height:300
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    iframe {
+        width:250;
+        height:200
+    }
+}
+
 
 
 input:hover{
